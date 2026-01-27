@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zach Hewett | Lighting Artist</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- RESET & VARIABLES --- */
+        :root {
+            --bg-color: #0d0d0d;
+            --text-primary: #ffffff;
+            --text-secondary: #999999;
+            --accent: #ec4d1e; 
+            --font-display: 'Yeseva One', serif; 
+            --font-body: 'Rubik', sans-serif;
+            --line-thick: 4px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            font-family: var(--font-body);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        a { text-decoration: none; color: inherit; transition: 0.3s; }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .section { padding: 120px 0; }
+        
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            font-family: var(--font-display);
+            font-weight: 400; 
+            letter-spacing: 0.03em; 
+            text-transform: none; /* Enforce Title Case */
+        }
+
+        /* Main Name Header */
+        h1 { 
+            font-size: clamp(5rem, 15vw, 11rem); 
+            line-height: 0.9; 
+            margin-bottom: 20px;
+        }
+        
+        /* Section Headers (Selected Works, Experience) */
+        h2 { 
+            font-size: 3rem; 
+            margin-bottom: 50px; 
+            border-left: 6px solid var(--accent); /* The orange vertical line */
+            padding-left: 25px;
+            color: var(--text-primary);
+        }
+
+        p { color: var(--text-secondary); max-width: 650px; font-size: 1.1rem; }
+
+        /* --- HERO --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+
+        .hero-sub {
+            color: var(--accent);
+            font-weight: 700;
+            font-family: var(--font-body);
+            letter-spacing: 0.15em;
+            margin-bottom: 15px;
+            display: block;
+            font-size: 1rem;
+            text-transform: uppercase;
+        }
+
+        .hero-intro {
+            margin-top: 40px;
+            border-top: var(--line-thick) solid #333;
+            padding-top: 40px;
+            padding-bottom: 60px;
+        }
+
+        /* --- CHEVRON ARROW STYLE --- */
+        .chevron-arrow {
+            display: block;
+            width: 35px;
+            height: 35px;
+            border-right: 5px solid var(--accent); 
+            border-bottom: 5px solid var(--accent);
+            transform: rotate(45deg);
+            cursor: pointer;
+            border-radius: 2px; 
+            transition: 0.3s;
+        }
+
+        .hero-arrow {
+            margin-top: 40px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0) rotate(45deg);}
+            40% {transform: translateY(-10px) rotate(45deg);}
+            60% {transform: translateY(-5px) rotate(45deg);}
+        }
+
+        /* --- PORTFOLIO (21:9 CINEMATIC) --- */
+        .work-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 140px;
+        }
+
+        .project-card {
+            display: block;
+            cursor: pointer;
+        }
+
+        .cinematic-frame {
+            width: 100%;
+            aspect-ratio: 21 / 9; 
+            background-color: transparent; 
+            overflow: hidden;
+            position: relative;
+            /* Explicitly remove border by default */
+            border: 2px solid transparent; 
+            transition: border-color 0.3s ease;
+        }
+
+        .cinematic-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Hover Effects */
+        .project-card:hover .cinematic-frame { border-color: var(--accent); }
+        .project-card:hover .cinematic-frame img { opacity: 1; }
+        .project-card:hover .project-title { color: var(--accent); }
+
+        .project-meta {
+            margin-top: 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            /* Accent Colored Dividing Line */
+            border-bottom: var(--line-thick) solid var(--accent);
+            padding-bottom: 15px;
+        }
+
+        .project-title { 
+            font-size: 2.8rem; 
+            transition: color 0.3s ease;
+            text-transform: none; /* Title Case */
+        }
+        
+        .project-role { 
+            font-family: var(--font-body); 
+            font-weight: 700;
+            color: var(--text-secondary); 
+            text-align: right;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+
+        @media(max-width: 850px) {
+            .project-meta { flex-direction: column; align-items: flex-start; gap: 10px; }
+            .project-role { text-align: left; }
+        }
+
+        /* --- PERSONAL WORK CAROUSEL --- */
+        .carousel-section {
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .carousel-intro {
+            margin-bottom: 50px;
+            padding-left: 40px; 
+            max-width: 1400px;
+            margin: 0 auto 50px auto;
+        }
+
+        .carousel-viewport {
+            width: 100vw;
+            margin-left: calc(50% - 50vw);
+            overflow: hidden; 
+            position: relative;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+            padding-left: 12.5vw; 
+            width: max-content;
+        }
+
+        .carousel-item {
+            width: 75vw; 
+            aspect-ratio: 21 / 9;
+            flex-shrink: 0;
+            position: relative;
+            border: 2px solid transparent; 
+            box-sizing: border-box;
+            background: #000;
+            cursor: pointer;
+        }
+
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .carousel-item:hover { border-color: var(--accent); z-index: 2; }
+        .carousel-item:hover img { opacity: 1; }
+
+        /* Navigation Arrows */
+        .carousel-nav {
+            position: absolute;
+            top: 0;
+            height: 100%;
+            width: 12.5vw; 
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            background: rgba(0,0,0,0.3);
+            transition: background 0.3s;
+        }
+        
+        .carousel-nav:hover { background: rgba(0,0,0,0.1); }
+
+        .nav-prev { left: 0; }
+        .nav-next { right: 0; }
+
+        .nav-prev .chevron-arrow { transform: rotate(135deg); border-width: 6px; width: 50px; height: 50px; }
+        .nav-next .chevron-arrow { transform: rotate(-45deg); border-width: 6px; width: 50px; height: 50px; }
+
+
+        /* --- EXPERIENCE GRID --- */
+        .resume-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 60px;
+        }
+
+        @media(max-width: 900px) { .resume-layout { grid-template-columns: 1fr; } }
+
+        .job-entry {
+            margin-bottom: 60px;
+            position: relative;
+            padding-left: 35px;
+            border-left: var(--line-thick) solid #333;
+        }
+
+        .job-entry::before {
+            content: '';
+            position: absolute;
+            left: -6px; 
+            top: 0;
+            width: 9px;
+            height: 9px;
+            background-color: var(--accent);
+        }
+
+        .job-date { 
+            font-family: var(--font-body);
+            font-weight: 700; 
+            color: var(--accent); 
+            margin-bottom: 8px; 
+            display: block; 
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+        }
+
+        .job-company { font-size: 1.8rem; margin-bottom: 15px; color: var(--text-primary); text-transform: uppercase; font-family: var(--font-body); font-weight: 900; }
+
+        /* --- CONTACT CTA --- */
+        .contact-section {
+            background-color: #050505;
+            border-top: 6px solid var(--accent);
+            text-align: center;
+            padding: 140px 20px;
+        }
+
+        /* Footer specific H2 override to remove the left border */
+        .cta-header { 
+            font-size: 3.5rem; 
+            margin-bottom: 50px; 
+            text-transform: uppercase; 
+            border-left: none; /* Removing the vertical line */
+            padding-left: 0;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .btn {
+            padding: 25px 70px;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-family: var(--font-display);
+            letter-spacing: 0.05em;
+            background-color: var(--accent);
+            color: #000;
+            border: none;
+            transition: 0.3s;
+            font-size: 1.4rem;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #fff;
+            color: #000;
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #444;
+            border-top: 1px solid #222;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="container hero">
+        <div>
+            <span class="hero-sub">Lighting Artist // Technical & Cinematic</span>
+            <h1>Zach<br>Hewett</h1>
+        </div>
+        <div class="hero-intro">
+            <p>
+                I'm a Lighting Artist with over five years of industry experience. 
+                I deliver bold, cinematic experiences and build the technical workflows that make them possible.
+            </p>
+            <div class="chevron-arrow hero-arrow"></div>
+        </div>
+    </header>
+
+    <section class="container section">
+        <h2>Selected Works</h2>
+        <div class="work-grid">
+            
+            <a href="https://www.artstation.com/artwork/rlOWPO" target="_blank" class="project-card">
+                <div class="cinematic-frame">
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/070/071/953/large/zach-hewett-zacharstation-02.jpg?1701703391" alt="Eve Vanguard Lighting">
+                </div>
+                <div class="project-meta">
+                    <h3 class="project-title">Eve Vanguard</h3>
+                    <span class="project-role">CCP GAMES // UNREAL ENGINE 5 // TBD</span>
+                </div>
+                <p style="margin-top:15px;">
+                    Sole lighting artist optimizing for UE5, Lumen, and Virtual Shadowmaps to deliver a bold 60fps experience.
+                </p>
+            </a>
+
+            <a href="https://www.artstation.com/artwork/5BmxeO" target="_blank" class="project-card">
+                <div class="cinematic-frame">
+                    <img src="https://cdna.artstation.com/p/assets/images/images/059/095/522/large/zach-hewett-zach-hewett-nfs-unbound-03.jpg?1675637178" alt="Need for Speed Unbound Lighting">
+                </div>
+                <div class="project-meta">
+                    <h3 class="project-title">Need for Speed Unbound</h3>
+                    <span class="project-role">ELECTRONIC ARTS // FROSTBITE // 2022</span>
+                </div>
+                <p style="margin-top:15px;">
+                    Responsible for lighting open-world environments and improving custom GI tech workflows.
+                </p>
+            </a>
+
+            <a href="https://www.artstation.com/artwork/03E1PY" target="_blank" class="project-card">
+                <div class="cinematic-frame">
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/046/030/423/large/zach-hewett-sc3-14-zachhewett-commerical-platform-09.jpg?1644149915" alt="Star Citizen Lighting">
+                </div>
+                <div class="project-meta">
+                    <h3 class="project-title">Star Citizen</h3>
+                    <span class="project-role">CLOUD IMPERIUM GAMES // STAR ENGINE // ALPHA</span>
+                </div>
+                <p style="margin-top:15px;">
+                    Translated concept art into in-engine lighting for spaceship showrooms and contested asteroid belts.
+                </p>
+            </a>
+
+        </div>
+    </section>
+
+    <section class="carousel-section">
+        <div class="container carousel-intro">
+            <h2>Personal Work</h2>
+            <p>
+                I keep my artistic and technical skills sharp by regularly practicing lighting work and testing new/upcoming features of UE5. There's lots more on my ArtStation.
+            </p>
+        </div>
+
+        <div class="carousel-viewport" id="carouselViewport">
+            <div class="carousel-nav nav-prev" onclick="moveCarousel(-1)">
+                <div class="chevron-arrow"></div>
+            </div>
+            <div class="carousel-nav nav-next" onclick="moveCarousel(1)">
+                <div class="chevron-arrow"></div>
+            </div>
+
+            <div class="carousel-track" id="track">
+                <a href="https://www.artstation.com/zachhewett" target="_blank" class="carousel-item">
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/047/824/407/large/zach-hewett-farmhouse.jpg?1648539874" alt="Farmhouse">
+                </a>
+                <a href="https://www.artstation.com/zachhewett" target="_blank" class="carousel-item">
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/035/736/987/large/zach-hewett-synthetic-edited.jpg?1615767962" alt="Synthetic">
+                </a>
+                <a href="https://www.artstation.com/zachhewett" target="_blank" class="carousel-item">
+                    <img src="https://cdna.artstation.com/p/assets/images/images/079/663/098/large/zach-hewett-thatsnotgood-01.jpg?1725484520" alt="Thats Not Good">
+                </a>
+                <a href="https://www.artstation.com/zachhewett" target="_blank" class="carousel-item">
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/071/563/341/large/zach-hewett-knight-grain.jpg?1732737558" alt="Knight Grain">
+                </a>
+                <a href="https://www.artstation.com/zachhewett" target="_blank" class="carousel-item">
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/040/221/845/large/zach-hewett-x-astra-03.jpg?1628203062" alt="X Astra">
+                </a>
+                <a href="https://www.artstation.com/zachhewett" target="_blank" class="carousel-item">
+                    <img src="https://cdnb.artstation.com/p/assets/images/images/042/630/205/large/zach-hewett-safehouse06.jpg?1635033310" alt="Safehouse">
+                </a>
+                <a href="https://www.artstation.com/zachhewett" target="_blank" class="carousel-item">
+                    <img src="https://cdna.artstation.com/p/assets/images/images/075/576/982/large/zach-hewett-alienworlds-3.jpg?1714930336" alt="Alien Worlds">
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section">
+        <div class="resume-layout">
+            <div>
+                <h2>Experience</h2>
+                <p>
+                    I have worked as part of large teams and as a sole lighting artist. 
+                    I specialize in bridging the gap between art and engineering, building tools to save setups as reusable presets.
+                </p>
+            </div>
+
+            <div>
+                <div class="job-entry">
+                    <span class="job-date">DEC 2022 - PRESENT</span>
+                    <h3 class="job-company">CCP Games / Lighting Artist</h3>
+                    <p>Working closely with the Art Director to deliver a cinematic FPS experience. Overseeing the project transition to Unreal Engine 5.</p>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-date">JAN 2022 - DEC 2022</span>
+                    <h3 class="job-company">Criterion Games / Assoc. Lighting Artist</h3>
+                    <p>Team specialist in novel in-house GI solutions. Lit large sections of the game's open world from creative exploration to final optimisation.</p>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-date">FEB 2021 - JAN 2022</span>
+                    <h3 class="job-company">Cloud Imperium / Lighting Artist I</h3>
+                    <p>Worked on multiple releases including interiors, exteriors, and atmosphere/sky lighting.</p>
+                </div>
+
+                <div class="job-entry">
+                    <span class="job-date">OCT 2020 - FEB 2021</span>
+                    <h3 class="job-company">Nexus Studios / Realtime Lighting Artist</h3>
+                    <p>Reproducing stylized art direction in a PBR-focused game engine.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact-section">
+        <h2 class="cta-header">Let's Make Games Together</h2>
+        <div class="cta-buttons">
+            <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="btn">
+                Connect on LinkedIn
+            </a>
+        </div>
+        <p style="margin: 30px auto 0; opacity: 0.6;">
+            Based in London, UK
+        </p>
+    </section>
+
+    <footer>
+        &copy; 2025 Zach Hewett. All Images &copy; Respective Owners.
+    </footer>
+
+    <script>
+        // Start on Index 1 (Second Image)
+        let currentSlide = 1;
+        const track = document.getElementById('track');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalSlides = items.length;
+
+        // Function to update position
+        function updatePosition() {
+            // 75vw is the width of one item.
+            const shiftAmount = currentSlide * 75; 
+            track.style.transform = `translateX(-${shiftAmount}vw)`;
+        }
+
+        // Initialize position immediately
+        updatePosition();
+
+        function moveCarousel(direction) {
+            currentSlide += direction;
+            
+            // Loop functionality
+            if (currentSlide < 0) currentSlide = totalSlides - 1;
+            if (currentSlide >= totalSlides) currentSlide = 0;
+
+            updatePosition();
+        }
+    </script>
+
+</body>
+</html>
