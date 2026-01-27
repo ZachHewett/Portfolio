@@ -121,7 +121,7 @@
 
         .hero-arrow {
             margin-top: 40px;
-            display: inline-block; /* Essential for anchor tag sizing */
+            display: inline-block; 
         }
         
         .hero-arrow:hover {
@@ -278,8 +278,18 @@
         .nav-prev { left: 0; }
         .nav-next { right: 0; }
 
-        .nav-prev .chevron-arrow { transform: rotate(135deg); border-width: 5px; width: 20px; height: 	20px; }
-        .nav-next .chevron-arrow { transform: rotate(-45deg); border-width: 5px; width: 20px; height: 	20px; }
+        .nav-prev .chevron-arrow { transform: rotate(135deg); border-width: 6px; width: 50px; height: 50px; }
+        .nav-next .chevron-arrow { transform: rotate(-45deg); border-width: 6px; width: 50px; height: 50px; }
+
+        /* Mobile Arrow Sizing */
+        @media(max-width: 768px) {
+            .nav-prev .chevron-arrow, 
+            .nav-next .chevron-arrow { 
+                width: 20px; 
+                height: 20px; 
+                border-width: 4px;
+            }
+        }
 
         /* --- EXPERIENCE GRID --- */
         .resume-layout {
@@ -324,7 +334,17 @@
         /* --- CONTACT CTA --- */
         .contact-section {
             text-align: center;
-            padding: 140px 0; 
+            padding: 120px 0; 
+        }
+
+        /* Profile Photo Style */
+        .profile-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 30px;
+            border: 3px solid var(--accent);
         }
 
         .cta-header { 
@@ -343,7 +363,7 @@
         /* LinkedIn Icon Style */
         .linkedin-icon {
             display: inline-block;
-            width: 48px; /* Nice touch target size */
+            width: 48px; 
             height: 48px;
             transition: 0.3s;
         }
@@ -365,6 +385,7 @@
             text-align: center;
             font-size: 0.9rem;
             color: #444;
+            border-top: 1px solid #222;
         }
     </style>
 </head>
@@ -483,8 +504,7 @@
                     <h2>Experience</h2>
                     <p>
                         I have worked as part of large teams and as a sole lighting artist. 
-                        I specialize in bridging the gap between art and engineering, building tools to save lighting setups as reusable presets. 
-                        Art is always at the core of what I do, the goal is to make the player feel something.
+                        I specialize in bridging the gap between art and engineering, building tools to save setups as reusable presets.
                     </p>
                 </div>
 
@@ -519,7 +539,9 @@
 
     <section class="contact-section">
         <div class="container">
-            <h2 class="cta-header">Let's make games together:</h2>
+            <img src="https://media.licdn.com/dms/image/v2/D4E03AQFf9LoZ40ghsQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1711318640765?e=1770854400&v=beta&t=liWURBt6yKIaAGUdZv4YAlnvORpGYLGt6mCdBcczLMg" alt="Zach Hewett" class="profile-photo">
+            
+            <h2 class="cta-header">Let's Make Games Together</h2>
             <div class="cta-buttons">
                 <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -567,5 +589,3 @@
 
 </body>
 </html>
-
-
