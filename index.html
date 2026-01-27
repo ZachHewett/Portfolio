@@ -21,6 +21,10 @@
             --line-thick: 4px;
         }
 
+        html {
+            scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+        }
+
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
         body {
@@ -34,11 +38,16 @@
 
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
-        /* --- UTILITIES --- */
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 0 40px;
+        /* --- LAYOUT STRUCTURE --- */
+        .container { 
+            max-width: 1300px; 
+            margin: 0 auto; 
+            padding: 0 20px; 
+            width: 100%;
+        }
+
+        @media(min-width: 768px) {
+            .container { padding: 0 40px; }
         }
 
         .section { padding: 120px 0; }
@@ -48,23 +57,22 @@
             font-family: var(--font-display);
             font-weight: 400; 
             letter-spacing: 0.03em; 
-            text-transform: none; /* Enforce Title Case */
+            text-transform: none; 
         }
 
-        /* Main Name Header */
         h1 { 
-            font-size: clamp(5rem, 15vw, 11rem); 
+            font-size: clamp(3.2rem, 15vw, 11rem); 
             line-height: 0.9; 
             margin-bottom: 20px;
         }
         
-        /* Section Headers (Selected Works, Experience) */
         h2 { 
-            font-size: 3rem; 
+            font-size: clamp(2.2rem, 7vw, 3rem); 
             margin-bottom: 50px; 
-            border-left: 6px solid var(--accent); /* The orange vertical line */
+            border-left: 6px solid var(--accent); 
             padding-left: 25px;
             color: var(--text-primary);
+            line-height: 1.1;
         }
 
         p { color: var(--text-secondary); max-width: 650px; font-size: 1.1rem; }
@@ -99,8 +107,8 @@
         /* --- CHEVRON ARROW STYLE --- */
         .chevron-arrow {
             display: block;
-            width: 35px;
-            height: 35px;
+            width: 20px;
+            height: 20px;
             border-right: 5px solid var(--accent); 
             border-bottom: 5px solid var(--accent);
             transform: rotate(45deg);
@@ -111,20 +119,22 @@
 
         .hero-arrow {
             margin-top: 40px;
-            animation: bounce 2s infinite;
+        }
+        
+        .hero-arrow:hover {
+            transform: translateY(5px) rotate(45deg); /* Subtle hover effect */
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {transform: translateY(0) rotate(45deg);}
-            40% {transform: translateY(-10px) rotate(45deg);}
-            60% {transform: translateY(-5px) rotate(45deg);}
-        }
 
-        /* --- PORTFOLIO (21:9 CINEMATIC) --- */
+        /* --- PORTFOLIO --- */
         .work-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 140px;
+            gap: 120px;
+        }
+
+        @media(max-width: 768px) {
+            .work-grid { gap: 60px; }
         }
 
         .project-card {
@@ -138,9 +148,14 @@
             background-color: transparent; 
             overflow: hidden;
             position: relative;
-            /* Explicitly remove border by default */
             border: 2px solid transparent; 
             transition: border-color 0.3s ease;
+        }
+
+        @media(max-width: 600px) {
+            .cinematic-frame {
+                aspect-ratio: 1 / 1;
+            }
         }
 
         .cinematic-frame img {
@@ -151,7 +166,6 @@
             transition: opacity 0.5s ease;
         }
 
-        /* Hover Effects */
         .project-card:hover .cinematic-frame { border-color: var(--accent); }
         .project-card:hover .cinematic-frame img { opacity: 1; }
         .project-card:hover .project-title { color: var(--accent); }
@@ -161,7 +175,6 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            /* Accent Colored Dividing Line */
             border-bottom: var(--line-thick) solid var(--accent);
             padding-bottom: 15px;
         }
@@ -169,7 +182,7 @@
         .project-title { 
             font-size: 2.8rem; 
             transition: color 0.3s ease;
-            text-transform: none; /* Title Case */
+            text-transform: none; 
         }
         
         .project-role { 
@@ -187,7 +200,7 @@
             .project-role { text-align: left; }
         }
 
-        /* --- PERSONAL WORK CAROUSEL --- */
+        /* --- CAROUSEL --- */
         .carousel-section {
             padding: 100px 0;
             position: relative;
@@ -196,8 +209,6 @@
 
         .carousel-intro {
             margin-bottom: 50px; 
-            max-width: 1400px;
-            margin: 0 auto 50px auto;
         }
 
         .carousel-viewport {
@@ -223,6 +234,12 @@
             box-sizing: border-box;
             background: #000;
             cursor: pointer;
+        }
+
+        @media(max-width: 600px) {
+            .carousel-item {
+                aspect-ratio: 1 / 1;
+            }
         }
 
         .carousel-item img {
@@ -257,9 +274,9 @@
         .nav-prev { left: 0; }
         .nav-next { right: 0; }
 
-        .nav-prev .chevron-arrow { transform: rotate(135deg); border-width: 6px; width: 50px; height: 50px; }
-        .nav-next .chevron-arrow { transform: rotate(-45deg); border-width: 6px; width: 50px; height: 50px; }
-
+        /* Desktop Arrow Size */
+        .nav-prev .chevron-arrow { transform: rotate(135deg); border-width: 5px; width: 20px; height: 20px; }
+        .nav-next .chevron-arrow { transform: rotate(-45deg); border-width: 5px; width: 20px; height: 20px; }
 
         /* --- EXPERIENCE GRID --- */
         .resume-layout {
@@ -268,7 +285,9 @@
             gap: 60px;
         }
 
-        @media(max-width: 900px) { .resume-layout { grid-template-columns: 1fr; } }
+        @media(max-width: 900px) { 
+            .resume-layout { grid-template-columns: 1fr; gap: 40px; } 
+        }
 
         .job-entry {
             margin-bottom: 60px;
@@ -304,15 +323,14 @@
             background-color: #050505;
             border-top: 6px solid var(--accent);
             text-align: center;
-            padding: 140px 20px;
+            padding: 140px 0; 
         }
 
-        /* Footer specific H2 override to remove the left border */
         .cta-header { 
-            font-size: 3.5rem; 
+            font-size: 3rem; 
             margin-bottom: 50px; 
             text-transform: none; 
-            border-left: none; /* Removing the vertical line */
+            border-left: none; 
             padding-left: 0;
         }
         
@@ -352,63 +370,67 @@
 </head>
 <body>
 
-    <header class="container hero">
-        <div>
-            <span class="hero-sub">Lighting Artist // Technical & Cinematic</span>
-            <h1>Zach<br>Hewett</h1>
-        </div>
-        <div class="hero-intro">
-            <p>
-                I'm a Lighting Artist with over five years of industry experience. 
-                I deliver bold, cinematic experiences and build the technical workflows that make them possible.
-            </p>
-            <div class="chevron-arrow hero-arrow"></div>
+    <header class="hero">
+        <div class="container">
+            <div>
+                <span class="hero-sub">Lighting Artist // Technical & Cinematic</span>
+                <h1>Zach<br>Hewett</h1>
+            </div>
+            <div class="hero-intro">
+                <p>
+                    I'm a Lighting Artist with over five years of industry experience. 
+                    I deliver bold, cinematic experiences and build the technical workflows that make them possible.
+                </p>
+                <a href="#selected-works" class="chevron-arrow hero-arrow"></a>
+            </div>
         </div>
     </header>
 
-    <section class="container section">
-        <h2>Selected Works</h2>
-        <div class="work-grid">
-            
-            <a href="https://www.artstation.com/artwork/rlOWPO" target="_blank" class="project-card">
-                <div class="cinematic-frame">
-                    <img src="https://cdnb.artstation.com/p/assets/images/images/070/071/953/large/zach-hewett-zacharstation-02.jpg?1701703391" alt="Eve Vanguard Lighting">
-                </div>
-                <div class="project-meta">
-                    <h3 class="project-title">Eve Vanguard</h3>
-                    <span class="project-role">CCP GAMES // UNREAL ENGINE 5 // TBD</span>
-                </div>
-                <p style="margin-top:15px;">
-                    A brutal sci-fi shooter. Scavenge resources, upgrade your gear, and outmatch rivals in a universe at war.
-                </p>
-            </a>
+    <section id="selected-works" class="section">
+        <div class="container">
+            <h2>Selected Works</h2>
+            <div class="work-grid">
+                
+                <a href="https://www.artstation.com/artwork/rlOWPO" target="_blank" class="project-card">
+                    <div class="cinematic-frame">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/070/071/953/large/zach-hewett-zacharstation-02.jpg?1701703391" alt="Eve Vanguard Lighting">
+                    </div>
+                    <div class="project-meta">
+                        <h3 class="project-title">Eve Vanguard</h3>
+                        <span class="project-role">CCP GAMES // UNREAL ENGINE 5 // TBD</span>
+                    </div>
+                    <p style="margin-top:15px;">
+                        A brutal sci-fi shooter. Scavenge resources, upgrade your gear, and outmatch rivals in a universe at war.
+                    </p>
+                </a>
 
-            <a href="https://www.artstation.com/artwork/5BmxeO" target="_blank" class="project-card">
-                <div class="cinematic-frame">
-                    <img src="https://cdna.artstation.com/p/assets/images/images/059/095/522/large/zach-hewett-zach-hewett-nfs-unbound-03.jpg?1675637178" alt="Need for Speed Unbound Lighting">
-                </div>
-                <div class="project-meta">
-                    <h3 class="project-title">Need for Speed: Unbound</h3>
-                    <span class="project-role">ELECTRONIC ARTS // FROSTBITE // 2022</span>
-                </div>
-                <p style="margin-top:15px;">
-                    Start at the bottom, race to the top in the latest entry in the iconic Need for Speed franchise.
-                </p>
-            </a>
+                <a href="https://www.artstation.com/artwork/5BmxeO" target="_blank" class="project-card">
+                    <div class="cinematic-frame">
+                        <img src="https://cdna.artstation.com/p/assets/images/images/059/095/522/large/zach-hewett-zach-hewett-nfs-unbound-03.jpg?1675637178" alt="Need for Speed Unbound Lighting">
+                    </div>
+                    <div class="project-meta">
+                        <h3 class="project-title">Need for Speed: Unbound</h3>
+                        <span class="project-role">ELECTRONIC ARTS // FROSTBITE // 2022</span>
+                    </div>
+                    <p style="margin-top:15px;">
+                        Start at the bottom, race to the top in the latest entry in the iconic Need for Speed franchise.
+                    </p>
+                </a>
 
-            <a href="https://www.artstation.com/artwork/03E1PY" target="_blank" class="project-card">
-                <div class="cinematic-frame">
-                    <img src="https://cdnb.artstation.com/p/assets/images/images/046/030/423/large/zach-hewett-sc3-14-zachhewett-commerical-platform-09.jpg?1644149915" alt="Star Citizen Lighting">
-                </div>
-                <div class="project-meta">
-                    <h3 class="project-title">Star Citizen</h3>
-                    <span class="project-role">CLOUD IMPERIUM GAMES // STAR ENGINE // ALPHA</span>
-                </div>
-                <p style="margin-top:15px;">
-                    Forge a life among the stars in a limitless MMO universe
-                </p>
-            </a>
+                <a href="https://www.artstation.com/artwork/03E1PY" target="_blank" class="project-card">
+                    <div class="cinematic-frame">
+                        <img src="https://cdnb.artstation.com/p/assets/images/images/046/030/423/large/zach-hewett-sc3-14-zachhewett-commerical-platform-09.jpg?1644149915" alt="Star Citizen Lighting">
+                    </div>
+                    <div class="project-meta">
+                        <h3 class="project-title">Star Citizen</h3>
+                        <span class="project-role">CLOUD IMPERIUM GAMES // STAR ENGINE // ALPHA</span>
+                    </div>
+                    <p style="margin-top:15px;">
+                        Forge a life among the stars in a limitless MMO universe
+                    </p>
+                </a>
 
+            </div>
         </div>
     </section>
 
@@ -454,54 +476,58 @@
         </div>
     </section>
 
-    <section class="container section">
-        <div class="resume-layout">
-            <div>
-                <h2>Experience</h2>
-                <p>
-                    I have worked as part of large teams and as a sole lighting artist. 
-                    I specialize in bridging the gap between art and engineering, building tools to save setups as reusable presets.
-                </p>
-            </div>
-
-            <div>
-                <div class="job-entry">
-                    <span class="job-date">DEC 2022 - PRESENT</span>
-                    <h3 class="job-company">CCP Games / Lighting Artist</h3>
-                    <p>The only lighting Artist on a small/mid sized team working to bring EVE back to the FPS genre. Lighting open worlds and optimising UE5 for a consistent, competitive experience across a wide range of hardware.</p>
+    <section class="section">
+        <div class="container">
+            <div class="resume-layout">
+                <div>
+                    <h2>Experience</h2>
+                    <p>
+                        I have worked as part of large teams and as a sole lighting artist. 
+                        I specialize in bridging the gap between art and engineering, building tools to save setups as reusable presets.
+                    </p>
                 </div>
 
-                <div class="job-entry">
-                    <span class="job-date">JAN 2022 - DEC 2022</span>
-                    <h3 class="job-company">Criterion Games / Assoc. Lighting Artist</h3>
-                    <p>Lighting team specialist in the novel, in-house GI solution. Lit large sections of the game's open world from creative exploration through to final optimisation.</p>
-                </div>
+                <div>
+                    <div class="job-entry">
+                        <span class="job-date">DEC 2022 - PRESENT</span>
+                        <h3 class="job-company">CCP Games / Lighting Artist</h3>
+                        <p>The only lighting Artist on a small/mid sized team working to bring EVE back to the FPS genre. Lighting open worlds and optimising UE5 for a consistent, competitive experience across a wide range of hardware.</p>
+                    </div>
 
-                <div class="job-entry">
-                    <span class="job-date">FEB 2021 - JAN 2022</span>
-                    <h3 class="job-company">Cloud Imperium / Lighting Artist I</h3>
-                    <p>Worked on multiple alpha releases including interiors, exteriors, and atmosphere/sky lighting. Part of a large, six person environment lighting team. I learnt a lot here from very talented artists.</p>
-                </div>
+                    <div class="job-entry">
+                        <span class="job-date">JAN 2022 - DEC 2022</span>
+                        <h3 class="job-company">Criterion Games / Assoc. Lighting Artist</h3>
+                        <p>Lighting team specialist in the novel, in-house GI solution. Lit large sections of the game's open world from creative exploration through to final optimisation.</p>
+                    </div>
 
-                <div class="job-entry">
-                    <span class="job-date">OCT 2020 - FEB 2021</span>
-                    <h3 class="job-company">Nexus Studios / Realtime Lighting Artist</h3>
-                    <p>Reproducing stylized art direction in a PBR-focused game engine. This short animation project was a test case for Nexus to explore working with UE5.</p>
+                    <div class="job-entry">
+                        <span class="job-date">FEB 2021 - JAN 2022</span>
+                        <h3 class="job-company">Cloud Imperium / Lighting Artist I</h3>
+                        <p>Worked on multiple alpha releases including interiors, exteriors, and atmosphere/sky lighting. Part of a large, six person environment lighting team. I learnt a lot here from very talented artists.</p>
+                    </div>
+
+                    <div class="job-entry">
+                        <span class="job-date">OCT 2020 - FEB 2021</span>
+                        <h3 class="job-company">Nexus Studios / Realtime Lighting Artist</h3>
+                        <p>Reproducing stylized art direction in a PBR-focused game engine. This short animation project was a test case for Nexus to explore working with UE5.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="contact-section">
-        <h2 class="cta-header">Let's Make Games Together</h2>
-        <div class="cta-buttons">
-            <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="btn">
-                Connect on LinkedIn
-            </a>
+        <div class="container">
+            <h2 class="cta-header">Let's Make Games Together</h2>
+            <div class="cta-buttons">
+                <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="btn">
+                    Connect on LinkedIn
+                </a>
+            </div>
+            <p style="margin: 30px auto 0; opacity: 0.6;">
+                Based in London, UK
+            </p>
         </div>
-        <p style="margin: 30px auto 0; opacity: 0.6;">
-            Based in London, UK
-        </p>
     </section>
 
     <footer>
