@@ -22,7 +22,7 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
+            scroll-behavior: smooth;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,6 +39,7 @@
         a { text-decoration: none; color: inherit; transition: 0.3s; }
 
         /* --- LAYOUT STRUCTURE --- */
+        /* Container handles width & horizontal padding */
         .container { 
             max-width: 1300px; 
             margin: 0 auto; 
@@ -50,6 +51,7 @@
             .container { padding: 0 40px; }
         }
 
+        /* Section handles vertical spacing */
         .section { padding: 120px 0; }
         
         /* --- TYPOGRAPHY --- */
@@ -119,12 +121,12 @@
 
         .hero-arrow {
             margin-top: 40px;
+            display: inline-block; /* Essential for anchor tag sizing */
         }
         
         .hero-arrow:hover {
-            transform: translateY(5px) rotate(45deg); /* Subtle hover effect */
+            transform: translateY(5px) rotate(45deg);
         }
-
 
         /* --- PORTFOLIO --- */
         .work-grid {
@@ -152,6 +154,7 @@
             transition: border-color 0.3s ease;
         }
 
+        /* Mobile Image Fix: Square Aspect Ratio */
         @media(max-width: 600px) {
             .cinematic-frame {
                 aspect-ratio: 1 / 1;
@@ -236,6 +239,7 @@
             cursor: pointer;
         }
 
+        /* Mobile: Match work grid ratio */
         @media(max-width: 600px) {
             .carousel-item {
                 aspect-ratio: 1 / 1;
@@ -274,9 +278,8 @@
         .nav-prev { left: 0; }
         .nav-next { right: 0; }
 
-        /* Desktop Arrow Size */
-        .nav-prev .chevron-arrow { transform: rotate(135deg); border-width: 5px; width: 20px; height: 20px; }
-        .nav-next .chevron-arrow { transform: rotate(-45deg); border-width: 5px; width: 20px; height: 20px; }
+        .nav-prev .chevron-arrow { transform: rotate(135deg); border-width: 5px; width: 20px; height: 	20px; }
+        .nav-next .chevron-arrow { transform: rotate(-45deg); border-width: 5px; width: 20px; height: 	20px; }
 
         /* --- EXPERIENCE GRID --- */
         .resume-layout {
@@ -320,8 +323,6 @@
 
         /* --- CONTACT CTA --- */
         .contact-section {
-            background-color: #050505;
-            border-top: 6px solid var(--accent);
             text-align: center;
             padding: 140px 0; 
         }
@@ -339,23 +340,23 @@
             justify-content: center;
         }
 
-        .btn {
-            padding: 25px 70px;
-            font-weight: 700;
-            text-transform: uppercase;
-            font-family: var(--font-display);
-            letter-spacing: 0.05em;
-            background-color: var(--accent);
-            color: #000;
-            border: none;
+        /* LinkedIn Icon Style */
+        .linkedin-icon {
+            display: inline-block;
+            width: 48px; /* Nice touch target size */
+            height: 48px;
             transition: 0.3s;
-            font-size: 1.4rem;
-            cursor: pointer;
         }
 
-        .btn:hover {
-            background-color: #fff;
-            color: #000;
+        .linkedin-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: var(--accent);
+        }
+
+        .linkedin-icon:hover {
+            transform: scale(1.1);
+            opacity: 0.8;
         }
 
         /* --- FOOTER --- */
@@ -364,7 +365,6 @@
             text-align: center;
             font-size: 0.9rem;
             color: #444;
-            border-top: 1px solid #222;
         }
     </style>
 </head>
@@ -520,8 +520,10 @@
         <div class="container">
             <h2 class="cta-header">Let's Make Games Together</h2>
             <div class="cta-buttons">
-                <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="btn">
-                    Connect on LinkedIn
+                <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="linkedin-icon" aria-label="LinkedIn">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                    </svg>
                 </a>
             </div>
             <p style="margin: 30px auto 0; opacity: 0.6;">
