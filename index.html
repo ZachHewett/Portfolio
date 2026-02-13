@@ -8,27 +8,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
-    
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'turf': '#1C7C54',
-                        'celadon': '#73E2A7',
-                        'tea': '#DEF4C6',
-                        'spruce': '#1B512D',
+                        'turf': '#141413',
+                        'celadon': '#4982F3',
+                        'tea': '#141413',
+                        'spruce': '#DACDB5',
                         'yellowgreen': '#B1CF5F',
-                        'brand-pink': '#E3A6A6',
+                        'brand-pink': '#4982F3',
                     },
                     fontFamily: {
                         display: ['Space Grotesk', 'sans-serif'],
                         body: ['Plus Jakarta Sans', 'sans-serif'],
                     },
                     boxShadow: {
-                        'hard': '6px 6px 0px 0px #1C7C54',
-                        'hard-pink': '6px 6px 0px 0px #E3A6A6',
-                        'hard-hover': '2px 2px 0px 0px #1C7C54',
+                        'hard': '8px 8px 0px 0px #141413',
+                        'hard-pink': '8px 8px 0px 0px #4982F3',
+                        'hard-hover': '2px 2px 0px 0px #141413',
                     },
                     borderRadius: {
                         'xl': '1rem',
@@ -40,48 +40,48 @@
         }
     </script>
     <style>
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: #1B512D; }
-        ::-webkit-scrollbar-thumb { background: #1C7C54; border-radius: 5px; }
-        ::-webkit-scrollbar-thumb:hover { background: #73E2A7; }
-        
-        body { background-color: #1B512D; }
+        ::-webkit-scrollbar { width: 12px; }
+        ::-webkit-scrollbar-track { background: #DACDB5; }
+        ::-webkit-scrollbar-thumb { background: #141413; border-radius: 6px; }
+        ::-webkit-scrollbar-thumb:hover { background: #4982F3; }
+
+        body { background-color: #DACDB5; }
     </style>
 </head>
-<body class="text-tea font-body antialiased selection:bg-brand-pink selection:text-spruce">
+<body class="text-tea font-body font-medium antialiased selection:bg-brand-pink selection:text-spruce">   
 
-    <nav class="fixed top-0 w-full z-50 px-6 py-4 bg-spruce/90 backdrop-blur-sm border-b-4 border-turf/30">
+    <nav class="fixed top-0 w-full z-50 px-6 py-4 bg-spruce/90 backdrop-blur-sm">
         <div class="flex justify-between items-center max-w-7xl mx-auto">
-            <a href="#" class="font-display font-bold text-2xl tracking-tighter text-brand-pink hover:text-white transition-colors">ZH.</a>
-            <div class="hidden md:flex gap-8 font-bold uppercase text-xs tracking-[0.2em] text-celadon">
+            <a href="#" class="font-display font-bold text-2xl tracking-tighter text-brand-pink hover:text-black transition-colors">ZH.</a>
+            <div class="hidden md:flex gap-8 font-bold uppercase text-xs tracking-[0.2em] text-celadon">  
                 <a href="#work" class="hover:text-brand-pink transition-colors">Work</a>
                 <a href="#about" class="hover:text-brand-pink transition-colors">About</a>
-                <a href="#experience" class="hover:text-brand-pink transition-colors">Experience</a>
+                <a href="#experience" class="hover:text-brand-pink transition-colors">Experience</a>      
             </div>
-            <a href="#contact" class="hidden md:block bg-brand-pink text-spruce px-6 py-2 rounded-xl font-bold hover:bg-white hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
+            <a href="#contact" class="hidden md:block bg-brand-pink text-spruce px-6 py-2 rounded-xl font-bold hover:bg-black hover:text-spruce hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
                 Contact Me
             </a>
         </div>
     </nav>
 
-    <header class="min-h-screen flex items-center justify-center px-6 pt-24 pb-12 overflow-x-hidden">
-        <div class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
+    <header class="min-h-screen flex items-center justify-center px-6 pt-24 pb-12 overflow-x-hidden">     
+        <div class="max-w-7xl w-full mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">       
+
             <div class="lg:col-span-8 flex flex-col justify-center pr-4">
-                <div class="inline-block border-4 border-brand-pink text-brand-pink px-4 py-1 rounded-full font-bold uppercase tracking-widest text-[10px] w-max mb-6">
+                <div class="inline-block border-8 border-brand-pink text-brand-pink px-4 py-1 rounded-full font-bold uppercase tracking-widest text-[10px] w-max mb-6">
                     London, UK
                 </div>
                 <h1 class="font-display font-bold text-7xl md:text-9xl leading-[0.85] tracking-tighter mb-8 text-tea">
                     Zach <br> Hewett
                 </h1>
-                <p class="text-xl md:text-2xl text-tea/80 max-w-2xl leading-relaxed mb-10 font-medium">
+                <p class="text-xl md:text-2xl text-tea max-w-2xl leading-relaxed mb-10 font-bold">        
                     I am a Lighting Artist bridging the gap between <span class="text-brand-pink">cinematic vision</span> and <span class="text-brand-pink">technical performance</span>. Currently defining the look of <em>EVE Vanguard</em> at CCP Games.
                 </p>
                 <div class="flex flex-col sm:flex-row gap-4">
-                    <a href="#work" class="bg-brand-pink text-spruce px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
+                    <a href="#work" class="bg-brand-pink text-spruce px-8 py-4 rounded-xl font-bold text-lg hover:bg-black hover:text-spruce hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
                         View Selected Works
                     </a>
-                    <a href="Zach Hewett CV25.pdf" target="_blank" class="bg-brand-pink text-spruce px-8 py-4 rounded-xl font-bold text-lg hover:bg-white hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
+                    <a href="Zach Hewett CV26.pdf" target="_blank" class="bg-brand-pink text-spruce px-8 py-4 rounded-xl font-bold text-lg hover:bg-black hover:text-spruce hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
                         Download CV
                     </a>
                 </div>
@@ -89,30 +89,30 @@
 
             <div class="lg:col-span-4 relative group h-[500px] w-full max-w-md mx-auto lg:mx-0">
                 <div class="absolute inset-0 bg-brand-pink rounded-[2.5rem] rotate-3 group-hover:rotate-0 transition-transform duration-300"></div>
-                <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="block relative bg-turf p-2 rounded-[2.5rem] overflow-hidden border-4 border-spruce h-full z-10 cursor-pointer">
+                <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="block relative bg-turf p-2 rounded-[2.5rem] overflow-hidden border-8 border-spruce h-full z-10 cursor-pointer"> 
                     <img src="profile.jpg" alt="Zach Hewett" class="w-full h-full object-cover rounded-[2rem] transition-all duration-500">
                 </a>
-                <div class="absolute -bottom-6 -left-6 bg-tea text-spruce p-4 rounded-2xl font-display font-bold shadow-hard rotate-[-3deg] z-20 border-4 border-spruce">
+                <div class="absolute -bottom-6 -left-6 bg-brand-pink text-spruce p-4 rounded-2xl font-display font-bold shadow-hard rotate-[-3deg] z-20 border-8 border-spruce">
                     5+ Years<br>Exp.
                 </div>
             </div>
         </div>
     </header>
 
-    <section id="about" class="py-20 border-y-4 border-turf/30 bg-black/10 px-6">
+    <section id="about" class="py-20 px-6">
         <div class="max-w-7xl mx-auto">
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-8 border-4 border-turf rounded-2xl">
-                    <h3 class="font-display font-bold text-3xl text-celadon mb-4">Pipeline Ownership</h3>
-                    <p class="text-tea/70">I build lighting tools and presets that streamline workflows for the entire art team, to nail visual quality benchmarks and production deadlines alike.</p>
+                <div class="p-8 border-8 border-turf rounded-2xl">
+                    <h3 class="font-display font-bold text-3xl text-celadon mb-4">Pipeline Ownership</h3> 
+                    <p class="text-tea">I build lighting tools and presets that streamline workflows for the entire art team, to nail visual quality benchmarks and production deadlines alike.</p>
                 </div>
-                <div class="p-8 border-4 border-turf rounded-2xl">
-                    <h3 class="font-display font-bold text-3xl text-celadon mb-4">Optimization</h3>
-                    <p class="text-tea/70">Experienced in optimising for a range of hardware. I work closely and in depth with rendering engineers to ensure the experience looks great while running smooth.</p>
+                <div class="p-8 border-8 border-turf rounded-2xl">
+                    <h3 class="font-display font-bold text-3xl text-celadon mb-4">Optimization</h3>       
+                    <p class="text-tea">Experienced in optimising for a range of hardware. I work closely and in depth with rendering engineers to ensure the experience looks great while running smooth.</p>      
                 </div>
-                <div class="p-8 border-4 border-turf rounded-2xl">
-                    <h3 class="font-display font-bold text-3xl text-celadon mb-4">Artistic Direction</h3>
-                    <p class="text-tea/70">I use light to guide the player's eye and emotion. Whether the project demands gritty realism, or bold stylization, I design lighting to enhance the experience.</p>
+                <div class="p-8 border-8 border-turf rounded-2xl">
+                    <h3 class="font-display font-bold text-3xl text-celadon mb-4">Artistic Direction</h3> 
+                    <p class="text-tea">I use light to guide the player's eye and emotion. Whether the project demands gritty realism, or bold stylization, I design lighting to enhance the experience.</p>        
                 </div>
             </div>
         </div>
@@ -120,77 +120,80 @@
 
     <section id="work" class="py-24 px-6">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-display font-bold text-5xl md:text-6xl text-tea mb-16">Selected Works</h2>
+            <h2 class="font-display font-bold text-5xl md:text-6xl text-tea mb-16">Selected Works</h2>    
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 auto-rows-[400px]">
-            
-            <a href="https://www.artstation.com/artwork/rlOWPO" target="_blank" class="group relative col-span-1 lg:col-span-2 row-span-1 rounded-3xl overflow-hidden border-4 border-turf hover:border-brand-pink transition-colors bg-spruce">
+
+            <a href="https://www.artstation.com/artwork/rlOWPO" target="_blank" class="group relative col-span-1 lg:col-span-2 row-span-1 rounded-3xl overflow-hidden border-8 border-turf hover:border-brand-pink transition-colors bg-spruce">
                 <img src="zach-hewett-zacharstation-06.jpg" alt="EVE Vanguard" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 p-8 w-full z-10">
                     <div class="flex justify-between items-end">
                         <div>
                             <span class="text-brand-pink font-bold tracking-widest text-xs uppercase mb-2 block">CCP Games // UE5</span>
-                            <h3 class="text-4xl font-display font-bold text-tea">EVE Vanguard</h3>
+                            <h3 class="text-4xl font-display font-bold text-white">EVE Vanguard</h3>      
+
                         </div>
                     </div>
                 </div>
             </a>
 
-            <a href="https://www.artstation.com/artwork/5BmxeO" target="_blank" class="group relative col-span-1 row-span-1 rounded-3xl overflow-hidden border-4 border-turf hover:border-brand-pink transition-colors bg-spruce">
+            <a href="https://www.artstation.com/artwork/5BmxeO" target="_blank" class="group relative col-span-1 row-span-1 rounded-3xl overflow-hidden border-8 border-turf hover:border-brand-pink transition-colors bg-spruce">
                 <img src="zach-hewett-zach-hewett-nfs-unbound-03.jpg" alt="NFS Unbound" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 p-8 w-full z-10">
                     <div class="flex justify-between items-end">
                         <div>
                             <span class="text-brand-pink font-bold tracking-widest text-xs uppercase mb-2 block">Criterion // Frostbite</span>
-                            <h3 class="text-3xl font-display font-bold text-tea">NFS: Unbound</h3>
+                            <h3 class="text-3xl font-display font-bold text-white">NFS: Unbound</h3>      
+
                         </div>
                     </div>
                 </div>
             </a>
 
-            <a href="https://www.artstation.com/artwork/03E1PY" target="_blank" class="group relative col-span-1 row-span-1 rounded-3xl overflow-hidden border-4 border-turf hover:border-brand-pink transition-colors bg-spruce">
-                <img src="zach-hewett-sc3-14-zachhewett-commerical-platform-09.jpg" alt="Star Citizen" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+            <a href="https://www.artstation.com/artwork/03E1PY" target="_blank" class="group relative col-span-1 row-span-1 rounded-3xl overflow-hidden border-8 border-turf hover:border-brand-pink transition-colors bg-spruce">
+                <img src="zach-hewett-sc3-14-zachhewett-commerical-platform-09.jpg" alt="Star Citizen" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"> 
                 <div class="absolute bottom-0 left-0 p-8 w-full z-10">
                     <div class="flex justify-between items-end">
                         <div>
                             <span class="text-brand-pink font-bold tracking-widest text-xs uppercase mb-2 block">CIG // Star Engine</span>
-                            <h3 class="text-3xl font-display font-bold text-tea">Star Citizen</h3>
+                            <h3 class="text-3xl font-display font-bold text-white">Star Citizen</h3>      
+
                         </div>
                     </div>
                 </div>
             </a>
 
-             <a href="https://www.artstation.com/zachhewett" target="_blank" class="group relative col-span-1 lg:col-span-2 row-span-1 rounded-3xl overflow-hidden border-4 border-turf hover:border-brand-pink transition-colors bg-spruce">
+             <a href="https://www.artstation.com/zachhewett" target="_blank" class="group relative col-span-1 lg:col-span-2 row-span-1 rounded-3xl overflow-hidden border-8 border-turf hover:border-brand-pink transition-colors bg-spruce">
                 <img src="zach-hewett-zachhewett-maelstrom3.jpg" alt="Maelstrom" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 p-8 w-full z-10">
                     <div class="flex justify-between items-end">
                         <div>
                             <span class="text-brand-pink font-bold tracking-widest text-xs uppercase mb-2 block">PERSONAL WORK</span>
-                            <h3 class="text-4xl font-display font-bold text-tea">Project Zero</h3>
+                            <h3 class="text-4xl font-display font-bold text-white">Project Zero</h3>        
                         </div>
                     </div>
                 </div>
             </a>
 
-            <a href="https://www.artstation.com/zachhewett" target="_blank" class="group relative col-span-1 lg:col-span-2 row-span-1 rounded-3xl overflow-hidden border-4 border-turf hover:border-brand-pink transition-colors bg-spruce">
+            <a href="https://www.artstation.com/zachhewett" target="_blank" class="group relative col-span-1 lg:col-span-2 row-span-1 rounded-3xl overflow-hidden border-8 border-turf hover:border-brand-pink transition-colors bg-spruce">
                 <img src="zach-hewett-synthetic-edited.jpg" alt="Synthetic" class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 p-8 w-full z-10">
                     <div class="flex justify-between items-end">
                         <div>
                             <span class="text-brand-pink font-bold tracking-widest text-xs uppercase mb-2 block">PERSONAL WORK</span>
-                            <h3 class="text-3xl font-display font-bold text-tea">Synthetic</h3>
+                            <h3 class="text-3xl font-display font-bold text-white">Synthetic</h3>
                         </div>
                     </div>
                 </div>
             </a>
 
-             <a href="https://www.artstation.com/zachhewett" target="_blank" class="group relative col-span-1 row-span-1 rounded-3xl overflow-hidden border-4 border-turf hover:border-brand-pink transition-colors bg-spruce">
+             <a href="https://www.artstation.com/zachhewett" target="_blank" class="group relative col-span-1 row-span-1 rounded-3xl overflow-hidden border-8 border-turf hover:border-brand-pink transition-colors bg-spruce">
                 <img src="zach-hewett-x-astra-01.jpg" alt="X Astra" class="absolute inset-0 w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105">
                 <div class="absolute bottom-0 left-0 p-8 w-full z-10">
                     <div class="flex justify-between items-end">
                         <div>
                             <span class="text-brand-pink font-bold tracking-widest text-xs uppercase mb-2 block">PERSONAL WORK</span>
-                            <h3 class="text-3xl font-display font-bold text-tea">Ad Astra</h3>
+                            <h3 class="text-3xl font-display font-bold text-white">Ad Astra</h3>
                         </div>
                     </div>
                 </div>
@@ -200,49 +203,49 @@
     </div>
 </section>
 
-    <section id="experience" class="py-24 px-6 bg-black/20 relative">
+    <section id="experience" class="py-24 px-6 relative">
         <div class="max-w-7xl mx-auto">
-            <h2 class="font-display font-bold text-5xl md:text-6xl text-tea mb-16">Experience</h2>
-            
-            <div class="relative space-y-12">
-                <div class="absolute left-[7px] top-3 bottom-0 w-0.5 bg-turf"></div>
+            <h2 class="font-display font-bold text-5xl md:text-6xl text-tea mb-16">Experience</h2>        
 
-                <div class="relative pl-12">
-                    <div class="absolute left-0 top-2 w-4 h-4 bg-brand-pink rounded-full border-4 border-spruce z-10 shadow-[0_0_10px_rgba(227,166,166,0.5)]"></div>
-                    <span class="text-brand-pink font-bold uppercase tracking-widest text-sm mb-1 block">Dec 2022 — Present</span>
+            <div class="relative space-y-12">
+                <!-- Lamp Stand - Terminating at the last body text line -->
+                <div class="absolute left-[7px] top-10 bottom-3 w-2 bg-turf"></div>
+                
+                <div class="relative pl-16">
+                    <!-- Traditional Lightbulb PNG - Refined Alignment -->
+                    <img src="Lightbulb.png" alt="Lightbulb" class="absolute left-[-21px] top-[-4px] w-16 h-auto z-10">
+                    
+                    <span class="text-brand-pink font-bold uppercase tracking-widest text-sm mb-1 block">Dec 2022 &mdash; Present</span>
                     <h3 class="text-3xl md:text-4xl font-display font-bold text-tea mb-2">Lighting Artist</h3>
-                    <h4 class="text-xl text-celadon mb-4 font-bold">CCP Games</h4>
-                    <p class="text-tea/70 text-lg leading-relaxed max-w-2xl">
+                    <h4 class="text-xl text-brand-pink mb-4 font-bold">CCP Games</h4>
+                    <p class="text-tea text-lg leading-relaxed max-w-2xl">
                         Sole lighting artist on <em>EVE Vanguard</em>. Working closely with Art & Game Directors to define a bold, cinematic FPS experience. Overseeing the transition to UE5, optimizing Virtual Shadowmaps and Lumen to hit strict 60fps targets.
                     </p>
                 </div>
 
-                <div class="relative pl-12">
-                    <div class="absolute left-0 top-2 w-4 h-4 bg-turf rounded-full border-4 border-spruce z-10"></div>
-                    <span class="text-turf font-bold uppercase tracking-widest text-sm mb-1 block">Jan 2022 — Dec 2022</span>
-                    <h3 class="text-3xl md:text-4xl font-display font-bold text-tea/80 mb-2">Associate Lighting Artist</h3>
-                    <h4 class="text-xl text-turf mb-4 font-bold">Criterion Games</h4>
-                    <p class="text-tea/60 text-lg leading-relaxed max-w-2xl">
+                <div class="relative pl-16">
+                    <span class="text-brand-pink font-bold uppercase tracking-widest text-sm mb-1 block">Jan 2022 &mdash; Dec 2022</span>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold text-tea mb-2">Associate Lighting Artist</h3>
+                    <h4 class="text-xl text-brand-pink mb-4 font-bold">Criterion Games</h4>
+                    <p class="text-tea text-lg leading-relaxed max-w-2xl">
                         Team specialist in novel, in-house GI solutions. Responsible for lighting large sections of the open world for <em>Need for Speed: Unbound</em>. Handled the pipeline from creative exploration to final bug-fixing and optimization.
                     </p>
                 </div>
 
-                <div class="relative pl-12">
-                    <div class="absolute left-0 top-2 w-4 h-4 bg-turf rounded-full border-4 border-spruce z-10"></div>
-                    <span class="text-turf font-bold uppercase tracking-widest text-sm mb-1 block">Feb 2021 — Jan 2022</span>
-                    <h3 class="text-3xl md:text-4xl font-display font-bold text-tea/80 mb-2">Lighting Artist I</h3>
-                    <h4 class="text-xl text-turf mb-4 font-bold">Cloud Imperium Games</h4>
-                    <p class="text-tea/60 text-lg leading-relaxed max-w-2xl">
-                        Part of a 6-person environment team for <em>Star Citizen</em>. Translated concept art into in-engine lighting for interiors, exteriors, and atmosphere across multiple alpha releases.
+                <div class="relative pl-16">
+                    <span class="text-brand-pink font-bold uppercase tracking-widest text-sm mb-1 block">Feb 2021 &mdash; Jan 2022</span>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold text-tea mb-2">Lighting Artist I</h3>
+                    <h4 class="text-xl text-brand-pink mb-4 font-bold">Cloud Imperium Games</h4>
+                    <p class="text-tea text-lg leading-relaxed max-w-2xl">
+                        Part of a 6-person environment team for <em>Star Citizen</em>. Translated concept art into in-engine lighting for interiors, exteriors, and atmosphere across multiple alpha releases.      
                     </p>
                 </div>
 
-                 <div class="relative pl-12">
-                    <div class="absolute left-0 top-2 w-4 h-4 bg-turf rounded-full border-4 border-spruce z-10"></div>
-                    <span class="text-turf font-bold uppercase tracking-widest text-sm mb-1 block">Oct 2020 — Feb 2021</span>
-                    <h3 class="text-3xl md:text-4xl font-display font-bold text-tea/80 mb-2">Realtime Lighting Artist</h3>
-                    <h4 class="text-xl text-turf mb-4 font-bold">Nexus Studios</h4>
-                    <p class="text-tea/60 text-lg leading-relaxed max-w-2xl">
+                 <div class="relative pl-16">
+                    <span class="text-brand-pink font-bold uppercase tracking-widest text-sm mb-1 block">Oct 2020 &mdash; Feb 2021</span>
+                    <h3 class="text-3xl md:text-4xl font-display font-bold text-tea mb-2">Realtime Lighting Artist</h3>
+                    <h4 class="text-xl text-brand-pink mb-4 font-bold">Nexus Studios</h4>
+                    <p class="text-tea text-lg leading-relaxed max-w-2xl">
                         Collaborated with Technical Artists to reproduce stylized art direction in a PBR-focused engine, exploring UE5 capabilities for animation projects.
                     </p>
                 </div>
@@ -254,25 +257,24 @@
 <footer id="contact" class="py-24 px-6 relative overflow-hidden">
         <div class="max-w-7xl mx-auto text-center relative z-10">
             <h2 class="font-display font-bold text-5xl md:text-7xl text-tea mb-8">Let's make games together</h2>
-            <p class="text-xl text-tea/70 mb-12 max-w-2xl mx-auto">
-                I'm ready to bring ownership, technical depth, and artistic flair to your next project.
+            <p class="text-xl text-tea mb-12 max-w-2xl mx-auto font-bold">
+                I'm ready to bring ownership, technical depth, and artistic flair to your next project.   
             </p>
-            
+
             <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="bg-brand-pink text-spruce px-10 py-5 rounded-xl font-bold text-xl hover:bg-white hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
+                <a href="https://www.linkedin.com/in/zach-hewett-9a6317169/" target="_blank" class="bg-brand-pink text-spruce px-10 py-5 rounded-xl font-bold text-xl hover:bg-black hover:text-spruce hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
                     LinkedIn
                 </a>
-                <a href="https://www.artstation.com/zachhewett" target="_blank" class="bg-brand-pink text-spruce px-10 py-5 rounded-xl font-bold text-xl hover:bg-white hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
+                <a href="https://www.artstation.com/zachhewett" target="_blank" class="bg-brand-pink text-spruce px-10 py-5 rounded-xl font-bold text-xl hover:bg-black hover:text-spruce hover:-translate-y-1 hover:shadow-hard-pink transition-all duration-200">
                     ArtStation
                 </a>
             </div>
-            
+
             <div class="mt-20 text-turf font-bold text-sm tracking-widest uppercase">
-                &copy; 2025 Zach Hewett // London
+                &copy; 2026 Zach Hewett // London
             </div>
         </div>
     </footer>
 
 </body>
 </html>
-
